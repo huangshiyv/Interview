@@ -1,12 +1,12 @@
 package CrackingTheCoding.Arrays;
 
 public class OneAway {
-    public boolean checkOneAway(String first, String second)
+    public boolean checkOneAway(String s1, String s2)
     {
         int index1 =0;
         int index2 =0;
-        first = first.length() > second.length() ? second : first;
-        second = first.length() > second.length() ? first : second;
+        String first = s1.length() > s2.length() ? s2 : s1;
+        String second = s1.length() > s2.length() ? s1 : s2;
         if((second.length() -first.length()) > 1)
         {
             return false;
@@ -19,6 +19,10 @@ public class OneAway {
                 if(founded)
                 {
                     return false;
+                }
+                if(first.length() == second.length())
+                {
+                    index1++;
                 }
                 founded = true;
             }else
